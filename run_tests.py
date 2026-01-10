@@ -1,7 +1,9 @@
 from hash_map import twoSum
-from hash_map import singleNumberHashMap
-# from two_pointers import ...
-# from dp import ...
+from hash_map import (
+    singleNumberHashMap,
+    containsDuplicate,
+    containsDuplicateHashMap
+)
 
 def run():
     # Two Sum
@@ -12,6 +14,9 @@ def run():
 
     print(singleNumberHashMap([2,2,1]))
     print(singleNumberHashMap([4,2,1,2,1]))
+    
+    print(containsDuplicate([1,2,3,4,5]))
+    print(containsDuplicateHashMap([4,2,1,3,2]))
 
 if __name__ == "__main__":
     run()

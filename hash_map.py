@@ -29,4 +29,22 @@ def singleNumberHashMap(nums: List[int]) -> int:
   
   return seen.pop()
   
-  
+def containsDuplicate(nums: List[int]) -> bool:
+  for i, x in enumerate(nums):
+    for j, y in enumerate(nums):
+      if i == j:
+        continue
+      if x==y:
+        return True
+  return False
+
+def containsDuplicateHashMap(nums: List[int]) -> bool:
+  seen = set()
+  for x in nums:
+    if x in seen:
+      return True
+    else:
+      seen.add(x)
+      
+  return False
+        
