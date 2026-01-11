@@ -2,7 +2,8 @@ from hash_map import twoSum
 from hash_map import (
     singleNumberHashMap,
     containsDuplicate,
-    containsDuplicateHashMap
+    containsDuplicateHashMap,
+    happyNumber
 )
 
 def run():
@@ -17,6 +18,8 @@ def run():
     
     print(containsDuplicate([1,2,3,4,5]))
     print(containsDuplicateHashMap([4,2,1,3,2]))
+
+    print(happyNumber(19))
 
 if __name__ == "__main__":
     run()

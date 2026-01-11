@@ -48,3 +48,19 @@ def containsDuplicateHashMap(nums: List[int]) -> bool:
       
   return False
         
+def happyNumber(n: int) -> bool:
+  seen = set()
+  while n != 1: 
+    if n in seen:
+      return False
+    
+    seen.add(n)
+
+    new_number = 0
+    for digit in str(n):
+      new_number += int(digit)**2
+    n = new_number
+  return True
+
+
+
