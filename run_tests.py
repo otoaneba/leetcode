@@ -3,7 +3,8 @@ from hash_map import (
     singleNumberHashMap,
     containsDuplicate,
     containsDuplicateHashMap,
-    happyNumber
+    happyNumber,
+    groupAnagrams
 )
 
 def run():
@@ -20,6 +21,8 @@ def run():
     print(containsDuplicateHashMap([4,2,1,3,2]))
 
     print(happyNumber(19))
+
+    print(groupAnagrams(["ate", "tea", "nat", "apple", "tan", "leppa"]))
 
 if __name__ == "__main__":
     run()
