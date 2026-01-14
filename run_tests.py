@@ -4,7 +4,9 @@ from hash_map import (
     containsDuplicate,
     containsDuplicateHashMap,
     happyNumber,
-    groupAnagrams
+    groupAnagrams,
+    groupAnagramsAlphabetMap,
+    groupAnagramsSort
 )
 
 def run():
@@ -23,6 +25,9 @@ def run():
     print(happyNumber(19))
 
     print(groupAnagrams(["ate", "tea", "nat", "apple", "tan", "leppa"]))
+    print(groupAnagramsAlphabetMap(["ate", "tea", "nat", "apple", "tan", "leppa"]))
+    print(groupAnagramsSort(["ate", "tea", "nat", "apple", "tan", "leppa"]))
+
 
 if __name__ == "__main__":
     run()

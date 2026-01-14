@@ -63,6 +63,7 @@ def happyNumber(n: int) -> bool:
   return True
 
 
+# O(n * m)
 def groupAnagrams(anagrams: List[str]) -> List[List[str]]:
   groups = {} 
   for word in anagrams:
@@ -81,6 +82,36 @@ def groupAnagrams(anagrams: List[str]) -> List[List[str]]:
   return list(groups.values())
     
 
+# O(n * 26m)
+def groupAnagramsAlphabetMap(anagrams: List[str]) -> List[List[str]]:
+  groups = {}
+  alphabets = 'abcdefghijklmnopqrstuvwxyz'
 
+  for word in anagrams:
+    frequencyMap = ''
 
+    for char in alphabets:
+      count = word.count(char)
+      if count > 0:
+        frequencyMap += f'{char}{count}'
 
+    if frequencyMap not in groups:
+      groups[frequencyMap] = [word]
+    else:
+      groups[frequencyMap].append(word)
+    
+  return list(groups.values())
+
+# O(n * klogk)
+def groupAnagramsSort(anagrams: List[str]) -> List[List[str]]:
+  groups = {}
+
+  for word in anagrams:
+    sortedWord = ''.join(sorted(word))
+    
+    if sortedWord not in groups:
+      groups[sortedWord] = [word]
+    else:
+      groups[sortedWord].append(word)
+
+  return list(groups.values())
