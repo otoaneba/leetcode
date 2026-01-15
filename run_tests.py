@@ -6,7 +6,8 @@ from hash_map import (
     happyNumber,
     groupAnagrams,
     groupAnagramsAlphabetMap,
-    groupAnagramsSort
+    groupAnagramsSort,
+    longestPalindrome
 )
 
 def run():
@@ -27,6 +28,8 @@ def run():
     print(groupAnagrams(["ate", "tea", "nat", "apple", "tan", "leppa"]))
     print(groupAnagramsAlphabetMap(["ate", "tea", "nat", "apple", "tan", "leppa"]))
     print(groupAnagramsSort(["ate", "tea", "nat", "apple", "tan", "leppa"]))
+
+    print(longestPalindrome("apuils"))
 
 
 if __name__ == "__main__":

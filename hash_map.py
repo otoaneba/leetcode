@@ -115,3 +115,25 @@ def groupAnagramsSort(anagrams: List[str]) -> List[List[str]]:
       groups[sortedWord].append(word)
 
   return list(groups.values())
+
+def longestPalindrome(word: str) -> int:
+  occurrenceMap = {}
+  for char in word:
+    if char not in occurrenceMap:
+      occurrenceMap[char] = 1
+    else:
+      occurrenceMap[char] += 1
+    
+  hasOddOccurrence = False
+  longestPalindrome = 0
+  for count in occurrenceMap.values():
+    if count%2 == 0:
+      longestPalindrome += count
+    else:
+      longestPalindrome += count - 1
+      hasOddOccurrence = True
+  
+  if hasOddOccurrence:
+    longestPalindrome += 1
+  return longestPalindrome
+  
