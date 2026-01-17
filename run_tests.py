@@ -7,7 +7,8 @@ from hash_map import (
     groupAnagrams,
     groupAnagramsAlphabetMap,
     groupAnagramsSort,
-    longestPalindrome
+    longestPalindrome,
+    missingNumber
 )
 
 def run():
@@ -30,6 +31,11 @@ def run():
     print(groupAnagramsSort(["ate", "tea", "nat", "apple", "tan", "leppa"]))
 
     print(longestPalindrome("apuils"))
+
+    print(missingNumber([0,1]))
+    print(missingNumber([3, 0, 1]))
+    print(missingNumber([9,6,4,2,3,5,7,0,1]))
+
 
 
 if __name__ == "__main__":

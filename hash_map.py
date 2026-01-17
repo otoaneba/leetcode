@@ -137,3 +137,9 @@ def longestPalindrome(word: str) -> int:
     longestPalindrome += 1
   return longestPalindrome
   
+def missingNumber(num: List[int]) -> int:
+  listSum = 0
+  for value in num:
+    listSum += value
+  
+  return sum(range(len(num)+1)) - listSum
