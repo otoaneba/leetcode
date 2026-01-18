@@ -1,5 +1,5 @@
-from hash_map import twoSum
 from hash_map import (
+    twoSum,
     singleNumberHashMap,
     containsDuplicate,
     containsDuplicateHashMap,
@@ -10,13 +10,15 @@ from hash_map import (
     longestPalindrome,
     missingNumber
 )
+from two_pointers import (
+    validPalindrome
+)
+
 
 def run():
-    # Two Sum
+    # Hashmap
     print(twoSum([2,7,11,15], 9))          # [0,1]
     print(twoSum([3,2,4], 6))              # [1,2]
-
-    print("All tests finished ✓")
 
     print(singleNumberHashMap([2,2,1]))
     print(singleNumberHashMap([4,2,1,2,1]))
@@ -35,6 +37,12 @@ def run():
     print(missingNumber([0,1]))
     print(missingNumber([3, 0, 1]))
     print(missingNumber([9,6,4,2,3,5,7,0,1]))
+
+    print("Hasmap tests finished ✓")
+
+    # two pointers
+    print(validPalindrome("apple"))
+
 
 
 
