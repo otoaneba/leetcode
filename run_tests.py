@@ -11,7 +11,9 @@ from hash_map import (
     missingNumber
 )
 from two_pointers import (
-    validPalindrome
+    validPalindrome,
+    palindromNumberStringConversion,
+    palindromeNumber
 )
 
 
@@ -41,7 +43,17 @@ def run():
     print("Hasmap tests finished ✓")
 
     # two pointers
-    print(validPalindrome("apple"))
+    print("validPalindrome: ", validPalindrome("apple"))
+
+    print("palindromNumberStringConversion: ", palindromNumberStringConversion(-1))
+    print("palindromNumberStringConversion: ", palindromNumberStringConversion(100))
+    print("palindromNumberStringConversion: ", palindromNumberStringConversion(1001))
+    print("palindromNumberStringConversion: ", palindromNumberStringConversion(1234321))
+
+    print("palindromeNumber: ", palindromeNumber(1001))
+    print("palindromeNumber: ", palindromeNumber(1234321))
+    print("palindromeNumber: ", palindromeNumber(123456))
+    print("palindromeNumber: ", palindromeNumber(3332333))
 
 
 
