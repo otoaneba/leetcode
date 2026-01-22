@@ -65,6 +65,16 @@ def palindromeNumber(num: int) -> bool:
     return reversed_digits == num
 
   
+def moveZerosToEnd(arr: List[int]) -> List[int]:
+    observer = 0
+    bookkeeper = 0
+    while observer < len(arr):
+        if arr[observer] != 0:
+            temp = arr[observer]
+            arr[observer] = arr[bookkeeper]
+            arr[bookkeeper] = temp
+            bookkeeper += 1
 
-  
+        observer += 1
+    return arr
 
