@@ -78,3 +78,14 @@ def moveZerosToEnd(arr: List[int]) -> List[int]:
         observer += 1
     return arr
 
+def moveZerosToEndAlt(arr: List[int]) -> List[int]:
+    bookkeeper = 0
+    for num in arr:
+        if num != 0:
+            arr[bookkeeper] = num 
+            bookkeeper += 1
+
+    for remaining_index in range(bookkeeper, len(arr)):
+      arr[remaining_index] = 0
+
+    return arr
