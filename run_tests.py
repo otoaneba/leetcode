@@ -13,7 +13,8 @@ from hash_map import (
 from two_pointers import (
     validPalindrome,
     palindromNumberStringConversion,
-    palindromeNumber
+    palindromeNumber,
+    mergeLinkedLists
 )
 
 
@@ -54,9 +55,21 @@ def run():
     print("palindromeNumber: ", palindromeNumber(1234321))
     print("palindromeNumber: ", palindromeNumber(123456))
     print("palindromeNumber: ", palindromeNumber(3332333))
+    
 
 
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
+def build_linked_list(values):
+    dummy = ListNode(0)
+    tail = dummy
+    for v in values:
+        tail.next = ListNode(v)
+        tail = tail.next
+    return dummy.next
 
 if __name__ == "__main__":
     run()
