@@ -1,3 +1,4 @@
+from typing import List
 from hash_map import (
     twoSum,
     singleNumberHashMap,
@@ -14,7 +15,8 @@ from two_pointers import (
     validPalindrome,
     palindromNumberStringConversion,
     palindromeNumber,
-    mergeLinkedLists
+    mergeLinkedLists,
+    length_of_cycle
 )
 
 
@@ -56,6 +58,8 @@ def run():
     print("palindromeNumber: ", palindromeNumber(123456))
     print("palindromeNumber: ", palindromeNumber(3332333))
     
+    nodes = build_linked_list_with_cycle()
+    print("length of cycle: ", length_of_cycle(nodes))
 
 
 class ListNode:
@@ -70,6 +74,12 @@ def build_linked_list(values):
         tail.next = ListNode(v)
         tail = tail.next
     return dummy.next
+
+def build_linked_list_with_cycle() -> List[ListNode]:
+    nodes = [ListNode(i) for i in [1, 2, 3, 4, 5]]
+    for i in range(len(nodes) - 1):
+        nodes[i].next = nodes[i + 1]
+    nodes[4].next = nodes[1] 
 
 if __name__ == "__main__":
     run()
