@@ -131,15 +131,21 @@ def prefixSum(arr: List[int], k: int) -> int:
   return count
 
 # Finding the length of a cycle in a linked list
-def length_of_cycle(head: ListNode) -> bool:
-  
-  if head.next == None:
-    return False
+def length_of_cycle(head: ListNode) -> int:
+
+  if head and head.next == None:
+    return 0
 
   slow = fast = head
   while fast and fast.next:
     slow = slow.next
     fast = fast.next.next
     if slow == fast:
-      return True
-  return False  
+      count = 1
+      slow = slow.next
+      while slow != fast:
+        slow = slow.next
+        count += 1
+        if slow == fast:
+          return count
+  return 0

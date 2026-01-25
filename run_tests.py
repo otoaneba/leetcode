@@ -75,11 +75,13 @@ def build_linked_list(values):
         tail = tail.next
     return dummy.next
 
-def build_linked_list_with_cycle() -> List[ListNode]:
+def build_linked_list_with_cycle() -> ListNode:
     nodes = [ListNode(i) for i in [1, 2, 3, 4, 5]]
     for i in range(len(nodes) - 1):
+        print(i)
         nodes[i].next = nodes[i + 1]
-    nodes[4].next = nodes[1] 
+    nodes[4].next = nodes[1]
+    return nodes[0]
 
 if __name__ == "__main__":
     run()
