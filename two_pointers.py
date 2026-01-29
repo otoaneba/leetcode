@@ -149,3 +149,56 @@ def length_of_cycle(head: ListNode) -> int:
         if slow == fast:
           return count
   return 0
+
+# Problem: Container With Most Water
+#
+# Given an array of non-negative integers `height`,
+# where height[i] represents the height of a vertical line at index i,
+# choose two different indices i and j to form a container.
+#
+# The amount of water the container can hold is:
+#   width  = j - i
+#   height = min(height[i], height[j])
+#   area   = width * height
+#
+# Goal:
+#   Return the maximum possible area among all valid pairs.
+#
+# Constraints / Assumptions:
+# - length of height >= 2
+# - values are non-negative integers
+# - array is not sorted
+# - container cannot be tilted
+# - prioritize time efficiency over space
+def container_with_most_water(arr: List[int]) -> int:
+  if len(arr) == 2:
+    return arr[0] * arr[1]
+  
+  i = 0
+  j = len(arr) - 1
+  area = abs(j-i) * min(arr[i], arr[j])
+  while i != j:
+    if arr[i] < arr[j]:
+      i += 1
+    else:
+      j -= 1
+    current_area = abs(j - i) * min(arr[i], arr[j])
+    if current_area > area:
+      area = current_area
+
+  return area 
+
+def two_sum_ii(nums: List[int], target: int) -> List[int]:
+  i = 0
+  j = len(nums)-1
+  current_sum = nums[i] + nums[j]
+  while i != j:
+    if current_sum == target:
+
+      return [i+1, j+1]
+    if current_sum < target:
+      i += 1
+    elif current_sum > target:
+      j -= 1
+    current_sum = nums[i] + nums[j]
+  return [i+1, j+1]

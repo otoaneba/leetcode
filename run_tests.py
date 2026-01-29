@@ -16,7 +16,9 @@ from two_pointers import (
     palindromNumberStringConversion,
     palindromeNumber,
     mergeLinkedLists,
-    length_of_cycle
+    length_of_cycle,
+    container_with_most_water,
+    two_sum_ii
 )
 
 
@@ -61,7 +63,10 @@ def run():
     nodes = build_linked_list_with_cycle()
     print("length of cycle: ", length_of_cycle(nodes))
 
+    print("container with most water", container_with_most_water([2, 9, 6, 2, 5, 3, 5, 10, 1]))
+    print("container with most water", container_with_most_water([1,1]))
 
+    print("two sum 2: ", two_sum_ii([1, 2, 3, 4], 6))
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
