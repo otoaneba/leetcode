@@ -202,3 +202,6 @@ def two_sum_ii(nums: List[int], target: int) -> List[int]:
       j -= 1
     current_sum = nums[i] + nums[j]
   return [i+1, j+1]
+
+
+  
