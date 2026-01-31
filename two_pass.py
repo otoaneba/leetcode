@@ -18,21 +18,24 @@ def product_of_array_except_self(nums: List[int]) -> List[int]:
     current_product *= nums[i]
   
   return products
-  # [1, 2, 3, 4] output: [24, 12, 8, 6]
-  #  
-  #  1  2  6  24
-  # [1, 1, 2, 6]
-  #           
-  # [   12  8  6]
-  #         8  4
 
-  # [2, 3, 4, 5] output: [60, 40, 30, 24]
-  # [0, 2, 6, 24]
-  # [60  20  5  0]
+
+def product_of_array_except_self_division(nums: List[int]) -> List[int]:
+  current_product = 1
+  products = []
+
+  for num in nums:
+    current_product *= num
+  
+  for num in nums: 
+    products.append(int(current_product / num))
+
+  return products
 
 def run():
 
     print(product_of_array_except_self([1,2,3,4]))
+    print(product_of_array_except_self_division([1,2,3,4]))
 
 if __name__ == "__main__":
     run()
