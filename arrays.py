@@ -1,4 +1,5 @@
 from collections import defaultdict, Counter
+import heapq
 from typing import List
 
 
@@ -403,5 +404,36 @@ def countingSort(nums: List[int]) -> List[int]:
             counter[i] -= 1
             index += 1
 
-    
+# Given an integer array nums and an integer k, return the k most frequent elements within the array.
+# The test cases are generated such that the answer is always unique.
+# You may return the output in any order.
 
+# Example 1:
+# Input: nums = [1,2,2,3,3,3], k = 2
+# Output: [2,3]
+
+# Example 2:
+# Input: nums = [7,7], k = 1
+# Output: [7]
+
+# Constraints:
+# 1 <= nums.length <= 10^4.
+# -1000 <= nums[i] <= 1000
+# 1 <= k <= number of distinct elements in nums.
+def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    counter = {}
+    for num in nums:
+        counter[num] = counter.get(num, 0) + 1
+    
+    heap = []
+    for num, freq in counter.items():
+        heapq.heappush(heap, (freq, num))
+
+        if len(heap) > k:
+            heapq.heappop(heap)
+    
+    res = []
+    for _ in range(k):
+        res.append(heapq.heappop(heap)[1])
+    return res
+    
