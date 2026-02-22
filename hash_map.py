@@ -62,6 +62,25 @@ def happyNumber(n: int) -> bool:
     n = new_number
   return True
 
+# without any help
+# did not talk aloud 
+# would fail any interview
+def isHappy(self, n: int) -> bool:
+  seen = set()
+
+  while n != 1:
+      currSum = 0
+      while n > 0:
+          currSum += (n % 10) ** 2
+          n = n // 10
+
+      if currSum in seen:
+          return False
+      seen.add(currSum)
+      n = currSum
+
+  return True
+
 
 # O(n * m)
 def groupAnagrams(anagrams: List[str]) -> List[List[str]]:
